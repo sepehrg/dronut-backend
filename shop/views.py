@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
 
-# Create your views here.
+from .models import Donut
+from .serializers import DonutSerializer
+
+class DonutViewSet(ModelViewSet):
+  queryset = Donut.objects.all()
+  serializer_class = DonutSerializer
+
